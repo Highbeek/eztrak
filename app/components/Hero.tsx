@@ -50,7 +50,7 @@ const Hero = () => {
           <Button onClick={() => {}} title="Create Service Request" />
           <Button
             onClick={() => {}}
-            title="Create Service Request"
+            title="Track Existing Request"
             variant="outline"
             className="bg-[#FFF1EB] text-[#F54E00]"
           />
