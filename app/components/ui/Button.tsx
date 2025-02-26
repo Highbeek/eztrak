@@ -24,7 +24,7 @@ export default function Button({
   const baseStyles = "font-medium py-3 px-6 rounded-lg transition-colors";
 
   const variantStyles: Record<"primary" | "secondary" | "outline", string> = {
-    primary: "bg-orange-500 hover:bg-orange-600 text-white",
+    primary: "bg-[#F54E00] hover:bg-orange-600 text-white",
     secondary: "bg-white hover:bg-gray-100 text-gray-800",
     outline: "border border-gray-300 text-gray-700 hover:bg-gray-50",
   };

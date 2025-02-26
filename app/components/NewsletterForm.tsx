@@ -3,9 +3,8 @@ import Link from "next/link";
 import Button from "./ui/Button";
 
 export default function NewsletterForm() {
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-   
   };
 
   return (
