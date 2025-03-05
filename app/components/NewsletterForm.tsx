@@ -25,7 +25,7 @@ export default function NewsletterForm() {
       <p className="text-sm mt-2">
         By subscribing, you agree to our{" "}
         <Link
-          href="/privacy"
+          href="#"
           className="underline hover:text-orange-300 transition-colors"
         >
           Privacy Policy

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, ChangeEvent, useRef } from "react";
+import React, { useState, ChangeEvent, useRef, JSX } from "react";
 import FormInput from "./ui/FormInput";
 import Button from "./ui/Button";
 import { MdOutlineCancel } from "react-icons/md";
@@ -20,10 +20,12 @@ interface FormData {
 
 interface ServiceRequestFormProps {
   onClose?: () => void;
+  formTitle?: string;
 }
 
 export default function ServiceRequestForm({
   onClose,
+  formTitle = "Create Service Request",
 }: ServiceRequestFormProps): JSX.Element {
   const [formData, setFormData] = useState<FormData>({
     selectedImage: null,
@@ -68,22 +70,21 @@ export default function ServiceRequestForm({
   }
 
   return (
-    <div className="relative max-w-[900px] w-[592px] mx-auto  p-8 ">
-      {onClose && (
+    <div className="relative max-w-full sm:max-w-[900px] w-full sm:w-[592px] mx-auto px-4 sm:px-2">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-black flex-grow">
+          {formTitle}
+        </h2>
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
+          className="text-gray-500 hover:text-gray-700 text-2xl"
         >
           <MdOutlineCancel size={24} />
         </button>
-      )}
-
-      <h2 className="text-2xl font-bold mb-6 text-black">
-        Create Service Request
-      </h2>
+      </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="flex border border-gray-300  overflow-hidden mb-6 h-[50px] rounded-xl">
+        <div className="flex border border-gray-300 overflow-hidden mb-6 h-[50px] rounded-xl">
           <button
             type="button"
             onClick={handleChooseImage}
@@ -104,7 +105,7 @@ export default function ServiceRequestForm({
           />
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6 mb-4">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-4">
           <FormInput
             label="Name"
             name="name"
@@ -134,7 +135,6 @@ export default function ServiceRequestForm({
           onChange={handleInputChange}
           className="mb-4"
         />
-
         <FormInput
           label="Street Address"
           name="street"
@@ -145,7 +145,7 @@ export default function ServiceRequestForm({
           className="mb-4"
         />
 
-        <div className="flex flex-col md:flex-row gap-6 mb-4">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-4">
           <FormInput
             label="City"
             name="city"
@@ -208,11 +208,20 @@ export default function ServiceRequestForm({
           />
         </div>
 
-        <div className="flex justify-between">
-          <Button variant="outline" type="button" onClick={onClose}>
+        <div className="flex flex-col sm:flex-row justify-between gap-4">
+          <Button
+            variant="outline"
+            type="button"
+            onClick={onClose}
+            className="w-full sm:w-auto"
+          >
             Back
           </Button>
-          <Button variant="primary" type="submit" className="w-[350px]">
+          <Button
+            variant="primary"
+            type="submit"
+            className="w-full sm:w-[350px]"
+          >
             Update Changes
           </Button>
         </div>

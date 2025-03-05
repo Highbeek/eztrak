@@ -7,8 +7,8 @@ import ServiceRequestForm from "./components/ServiceRequestForm";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
-      <div className="">
+    <main className="overflow-hidden w-full">
+      <div className="overflow-hidden">
         <Hero />
         <SearchSection />
         <ServiceCategories />

@@ -1,5 +1,3 @@
-
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
@@ -27,15 +25,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ height: "100%" }}>
       <body
-        className={`${geistSans.variable} ${bricolageFont.variable} antialiased`}
+        className={`${geistSans.variable} ${bricolageFont.variable} antialiased min-h-screen`}
       >
         <div className="">
           <Navbar />
         </div>
         <main className="flex-grow">{children}</main>
-        <div className="w-full">
+        <div className="">
           <Footer />
         </div>
       </body>

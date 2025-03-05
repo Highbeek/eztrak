@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import React from "react";
 
@@ -5,15 +6,20 @@ interface ServiceCardProps {
   title: string;
   description: string;
   icon: string;
+  onClick?: () => void;
 }
 
 export default function ServiceCard({
   title,
   description,
   icon,
+  onClick,
 }: ServiceCardProps) {
   return (
-    <div className="bg-[#F5F3F7] p-6 rounded-3xl h-[278]">
+    <div
+      className="bg-[#F5F3F7] p-6 rounded-3xl h-[278] cursor-pointer"
+      onClick={onClick}
+    >
       <div className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white mb-4">
         <Image
           src={icon}

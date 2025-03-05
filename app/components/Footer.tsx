@@ -16,12 +16,11 @@ export default function Footer() {
   return (
     <footer className="relative text-white py-12 mt-auto">
       <div className="absolute inset-0 bg-[url('/images/heroImg.png')] bg-cover bg-center" />
-
       <div className="absolute inset-0 bg-[#993100D9]" />
 
-      <div className="relative container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div>
+      <div className="relative container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row justify-between gap-8">
+          <div className="w-full lg:w-1/3">
             <Image
               src="/images/logo-white.png"
               alt="EZTRAK Logo"
@@ -43,20 +42,22 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="border border-white rounded-3xl p-8 px-12 w-[570px]">
-            <h3 className="text-2xl font-bold mb-4">
-              Want to Subscribe to Newsletter?
+          <div className="w-full lg:w-2/3 max-w-lg border border-white rounded-3xl p-6 md:p-8">
+            <h3 className="text-2xl font-bold mb-4 text-center lg:text-left">
+              Want to Subscribe to Our Newsletter?
             </h3>
-            <p className="mb-4 font-light">
+            <p className="mb-4 font-light text-center lg:text-left">
               Subscribe to our email to get updates right to your inbox.
             </p>
             <NewsletterForm />
           </div>
         </div>
 
-        <div className="border-t border-b border-[#D2D9DF] mt-8 py-6 flex flex-col md:flex-row justify-between items-center">
-          <p>Copyright ©EZTRAK Software Solution</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
+        <div className="border-t border-b border-[#D2D9DF] mt-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-center md:text-left">
+            Copyright © EZTRAK Software Solution
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <p>Follow:</p>
             <a
               href="#"
@@ -81,7 +82,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              aria-label="Pinterest"
+              aria-label="Github"
               className="hover:text-orange-300 transition-colors"
             >
               <FiGithub size={20} />
